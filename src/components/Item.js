@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, observable } from 'react';
 import { observer } from 'mobx-react'
 
 @observer
@@ -19,6 +19,9 @@ class Item extends Component {
         <input type="checkbox" onClick={this.checkItem}
         value={item.name} />
         {item.name}
+        <br></br>
+        {item.location}
+        
       </div>)
   }
 }
