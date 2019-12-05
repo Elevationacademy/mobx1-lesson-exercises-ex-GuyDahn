@@ -7,7 +7,8 @@ class Item extends Component {
     this.props.store.checkItem(e.target.value)
   }
   editItem = () => {
-    //your code here
+    let newLocation = prompt('please enter new item')
+    this.props.store.editItem(this.props.item.name, newLocation)
   }
   deleteItem = () => {
     //your code here
@@ -17,11 +18,11 @@ class Item extends Component {
     return (
       <div className={item.completed ? "crossed" : null}>
         <input type="checkbox" onClick={this.checkItem}
-        value={item.name} />
-        {item.name}
-        <br></br>
-        {item.location}
-        
+          value={item.name} />
+        <h2 id='item-title'> {item.name}</h2>
+        <div>{item.location}</div>
+        <button onClick={this.editItem}>edit</button>
+        <button onClick={this.removeItem}>remove</button>
       </div>)
   }
 }

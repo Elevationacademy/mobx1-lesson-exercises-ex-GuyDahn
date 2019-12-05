@@ -18,12 +18,13 @@ class App extends Component {
   }
 
   render() {
+    let store = this.props.store
     return (
       <div className="App">
         <DevTools/>
         <input onChange={this.handleChange} />
         <button onClick={this.addItem}>Add</button>
-        {this.props.store.list.map((i, ind) =>
+        {store.list.map((i, ind) =>
           <Item
             item={i}
             key={ind}
